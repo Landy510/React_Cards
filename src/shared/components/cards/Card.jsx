@@ -1,5 +1,7 @@
 import styles from './Card.module.css'
 import PropTypes from 'prop-types';
+import bulbUrl from '../../../assets/images/bulb.png'
+import fireUrl from '../../../assets/images/fire.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronRight,  } from '@fortawesome/free-solid-svg-icons'
 
@@ -34,7 +36,7 @@ function Card({item}) {
         </div>
         <div className={styles.hintTxt}>
           <img 
-            src="src/assets/images/bulb.png" 
+            src={bulbUrl}
             alt="light bulb" 
             width={20}
             height={20}
@@ -64,7 +66,7 @@ function Card({item}) {
           <p className={styles['itemTxt']}>
             <span>
               <img 
-                src="src/assets/images/fire.png" 
+                src={fireUrl} 
                 alt="coin icon" 
                 width={24}
                 height={24}
@@ -99,7 +101,7 @@ function Card({item}) {
           <p className={styles['itemTxt']}>
             <span>
               <img 
-                src="src/assets/images/fire.png" 
+                src={fireUrl}
                 alt="coin icon" 
                 width={24}
                 height={24}
