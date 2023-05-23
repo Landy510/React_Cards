@@ -1,0 +1,129 @@
+.card + .card,  .card + .noResult{
+  margin-left: 50px;
+}
+
+.card {
+  width: 227px;
+  height: 220px;
+  border-radius: 25px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+  padding: 20px;
+  position: relative;
+}
+
+.card .header {
+  white-space:nowrap;
+  text-align: left;
+  color: #f4dc00;
+  font-weight: 600;
+  padding-left: 10px;
+  border-left: 4px solid #f4dc00;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.card .item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.card .itemLabel {
+  color: #979797;
+  font-weight: 400;
+}
+
+.card .itemTxt {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.card .itemTxt img {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+.card .hintTxt {
+  margin-top: 10px;
+  display: flex;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #979797;
+  font-size: 14px;
+  text-align: left;
+}
+
+.card .hintTxt img {
+  margin-right: 5px;
+}
+
+.card .button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 145px;
+  height: 40px;
+  color: #fff;
+  background-color: #f4dc00;
+  border-top-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.card .button .arrowIcon {
+  margin-left: 20px;
+}
+
+.noResult {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 227px;
+  height: 220px;
+  border-radius: 25px;
+  padding: 25px 20px;
+  background-image: url(../../../assets/images/muscleBg.png);
+  background-position: center center;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+}
+
+.noResult .header {
+  white-space:nowrap;
+  color: #f4dc00;
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 17px;
+}
+
+.noResult .message {
+  font-size: 18px;
+  font-weight: 600;
+  text-align: left;
+  line-height: normal;
+  color: #3d3d3d;
+}
+
+.noResult .button {
+  border: 1px solid #f4dc00;
+  padding: 10px;
+  border-radius: 25px;
+  color: #f4dc00;
+  margin-top: auto;
+  display: inline-block;
+  background-color: #fff;
+}
+
+.button:hover {
+  cursor: pointer;
+}
