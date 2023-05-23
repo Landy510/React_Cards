@@ -2,11 +2,15 @@ import styles from './Card.module.css'
 import PropTypes from 'prop-types';
 import bulbUrl from '../../../assets/images/bulb.png'
 import fireUrl from '../../../assets/images/fire.png'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faChevronRight,  } from '@fortawesome/free-solid-svg-icons'
+import { useState } from 'react';
 
 function Card({item}) {
-  
+  const [showMask, setShowMask] = useState(false)
+
+  function handleMouseEnter(toggle) {
+    setShowMask(toggle)
+  }
+
   if(item.number === 4) {
     return (
       <div className={styles.noResult}>
@@ -23,7 +27,15 @@ function Card({item}) {
   }
   else if(item.number === 1) {
     return (
-      <div className={styles.card}>
+      <a 
+        className={[styles.card, `${showMask ? `${styles.show}`: ''}`].join(' ')}
+        onMouseEnter={() => handleMouseEnter(true)}
+        onMouseLeave={() => handleMouseEnter(false)}
+        href={item.btnUrl}
+      >
+        <div className={styles.mask}>
+          <p>Learn More</p>
+        </div>
         <h4 className={styles['header']}>Daily Calorie Burn</h4>
         <div className={styles['item']}>
           <p 
@@ -43,18 +55,20 @@ function Card({item}) {
           />
           <span>Active calories burn could help you lose weights.</span>
         </div>
-        <a className={styles.button}>
-          <span>learn more</span>
-          <span className={styles.arrowIcon}>
-            <FontAwesomeIcon icon={faChevronRight} />
-          </span>
-        </a>
-      </div>
+      </a>
     )
   }
   else if(item.number === 2) {
     return (
-      <div className={styles.card}>
+      <a 
+        className={[styles.card, `${showMask ? `${styles.show}`: ''}`].join(' ')}
+        onMouseEnter={() => handleMouseEnter(true)}
+        onMouseLeave={() => handleMouseEnter(false)}
+        href={item.btnUrl}
+      >
+        <div className={styles.mask}>
+          <p>Learn More</p>
+        </div>
         <h4 className={styles['header']}>Running</h4>
         <div className={styles['item']}>
           <p className={styles['itemLabel']}>Duration</p>
@@ -76,20 +90,21 @@ function Card({item}) {
               {item.burn}
             </span>
           </p>
-        </div>
-        
-        <a className={styles.button}>
-          <span>learn more</span>
-          <span className={styles.arrowIcon}>
-            <FontAwesomeIcon icon={faChevronRight} />
-          </span>
-        </a>
-      </div>
+        </div>        
+      </a>
     )
   }
   else {
     return (
-      <div className={styles.card}>
+      <a 
+        className={[styles.card, `${showMask ? `${styles.show}`: ''}`].join(' ')}
+        onMouseEnter={() => handleMouseEnter(true)}
+        onMouseLeave={() => handleMouseEnter(false)}
+        href={item.btnUrl}
+      >
+        <div className={styles.mask}>
+          <p>Learn More</p>
+        </div>
         <h4 className={styles['header']}>Jump Rope</h4>
         <div className={styles['item']}>
           <p className={styles['itemLabel']}>Duration</p>
@@ -112,14 +127,7 @@ function Card({item}) {
             </span>
           </p>
         </div>
-        
-        <a className={styles.button}>
-          <span>learn more</span>
-          <span className={styles.arrowIcon}>
-            <FontAwesomeIcon icon={faChevronRight} />
-          </span>
-        </a>
-      </div>
+      </a>
     )
   }
   
